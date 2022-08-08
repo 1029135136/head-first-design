@@ -28,17 +28,16 @@ public class RemoteControlTest {
         remoteControl.setCommand(1, garageDoorOpenCommand, garageDoorCloseCommand);
 
 
-        System.out.println(remoteControl);
-        ;
+//        System.out.println(remoteControl);
 
         remoteControl.buttonOnPressed(0);
-        remoteControl.undoButtonPressed();
+//        remoteControl.undoButtonPressed();
         remoteControl.buttonOffPressed(0);
-        remoteControl.undoButtonPressed();
+//        remoteControl.undoButtonPressed();
 
         remoteControl.buttonOnPressed(1);
         remoteControl.buttonOffPressed(1);
-        remoteControl.undoButtonPressed();
+//        remoteControl.undoButtonPressed();
     }
 
     @Test
