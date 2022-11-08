@@ -8,23 +8,20 @@ import com.ang.part2.weather.Subject;
  * @author: 于昂
  * @date: 2022/8/3
  **/
-public class CurrentConditionsDisplay implements Observer, DisplayElement {
-    /**
-     * 温度
-     */
-    private float temp;
-    /**
-     * 湿度
-     */
-    private float humidity;
-    /**
-     * 气压
-     */
-    private float pressure;
+public class HealthIndexDisplay implements Observer, DisplayElement {
+
 
     private Subject weatherData;
 
-    public CurrentConditionsDisplay(WeatherData weatherData) {
+
+    /**
+     * 基础气象数据
+     */
+    private float temp;
+    private float humidity;
+    private float pressure;
+
+    public HealthIndexDisplay(Subject weatherData) {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
     }
@@ -34,11 +31,11 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
         this.temp = temp;
         this.humidity = humidity;
         this.pressure = pressure;
-        display();
+        this.display();
     }
 
     @Override
     public void display() {
-        System.out.printf("Current conditions: %.2fF degrees and %.2f humidity%n", temp, humidity);
+        System.out.printf("HealthIndexDisplay: %.2fF degrees and %.2f humidity%n", this.temp, this.humidity);
     }
 }
